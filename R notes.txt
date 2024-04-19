@@ -1,0 +1,135 @@
+13-02024:
+
+arrays:
+dim - to check the dimension of the arrays
+class - to check the type of class used
+is. - to check the data type 
+
+https://www.coursera.org/search?query=Data%20Science%20Specialization&skipBrowseRedirect=true
+
+
+Coursera R:
+- autoprinting
+- explicit printing(automatic printing usning methods)
+coercion is like typecasting:
+	implicit - automatically
+	explicit - using as.	
+
+
+
+### 
+read.csv
+View()
+file.choose
+View(is.na) - shows all the rows having NA values
+View(x[!complete.cases(x),]) - shows all the instances which have not complete cases like NA values
+
+names(x) - gives all the column names
+which() - gives the index of the parameter
+sapply - 
+anyNA
+
+missForest package
+prodNA 
+
+
+###
+row.names = 1 ; creates the output with row names starting with 1
+
+to find max:
+use for loop or #using apply(an array or matrix, margin, function)
+in appy , 1 <- row wise
+2 <- column wise
+
+function()
+
+lapply(x , func ...) - list apply
+?vapply
+?mapply
+?sapply
+
+#vector is the simplest form to store anything also stores the memory in contigous form
+#sapply used when we want simplyfied op
+
+-------------------------------------------------
+### DATA SETS FOR PROJECT
+###data.gov.in
+### uci machine learning archive
+### kaggle
+should have more no. of attributes at least >7
+atleast >40 rows
+at least 5 objectives
+### should create pop up page of 5 objectives 
+
+### use rmarkdown package
+
+###ideas: Sporcle world guesser,
+-------------------------------------------------
+
+
+###named vectors
+###tapply
+
+###mapply - multivariate apply of sapply
+
+
+###dplyr
+
+#to load a lib use library() or require()
+
+#dplyr is grammar of data manipulation and is used for data cleaning 
+#dplyr has following functions:
+select
+filter - to select our required string 
+mutate
+arrange - for sorting AO/DO 
+summarize
+group_by
+%>% (pipe sign)
+
+#dplyr is much better than subsetting methods
+#attributes names are case sensitive
+
+#filter() - subsetting the data 
+
+# , = and operator = ampersand operator = &
+# | = piping operator = or operator
+
+
+
+
+###mutate()
+- for manipulating columns
+
+!!!piping operator and use of ther methods
+
+//pivoting is exchange of rows and columns
+
+
+###tidyr package
+	CREATING TIDY DATA IN R
+it consists of:
+gather 
+spread
+unite 
+seperate 
+replace_na
+
+
+// date always in String
+
+
+### ggplot2 packages
+- for pure data visualization of data
+- geom_point creates scatter plot
+
+
+### sqldf - for using sql in R
+- only used on dataframes
+- select * to select everything
+- where
+- group by
+- 
+
+sample and runif for generating random values
+runif for generating continuos values and floating values
