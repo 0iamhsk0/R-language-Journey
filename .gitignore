@@ -1,0 +1,4 @@
+# Ignore duplicate and copied files
+*(*).*
+*copy*
+*Copy*

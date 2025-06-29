@@ -1,0 +1,35 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+```
+
+## Column {data-width="650"}
+
+### Chart A
+
+```{r}
+ggplot(data = iris, aes(x=Sepal.Length)) + labs(x="Sepal", y="Frequency of sepal length") + 
+  geom_histogram(bins = 10, fill = 'red', col = 'black') +
+  ggtitle('Histogram')
+```
+
+## Column {data-width="350"}
+
+### Chart B
+
+```{r}
+```
+
+### Chart C
+
+```{r}
+
+```

@@ -1,0 +1,91 @@
+---
+title: "newdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+```{r}
+
+```
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Donut chart 
+
+```{r}
+data <- data.frame(
+  Category = c("A", "B", "C", "D"),
+  Value = c(20, 30, 40, 10)
+)
+#data
+
+pie_chart <- ggplot(data, aes(x = "", y = Value, fill = Category)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar(theta = "y") +
+  geom_text(aes(label = paste(Category, round(Value/sum(Value) * 100), "%")),
+            position = position_stack(vjust = 0.5)) + 
+  scale_fill_brewer(palette = "Dark2") +
+  theme_void()
+#pie_chart
+
+donut_chart <- pie_chart +
+  geom_bar(data = data, aes(x = "", y = Value),
+           stat = "identity",
+           width = 0.5, fill = "lightblue") +
+  geom_text(data = data,
+            aes(label = paste(Category, Value, "%")))
+donut_chart
+#donut_chart
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Bar chart
+
+```{r}
+ggplot(data = iris, aes(x=Sepal.Length)) + labs(x="Sepal", y="Frequency of sepal length") + 
+  geom_histogram(bins = 10, fill = 'red', col = 'black') +
+  ggtitle('Histogram')
+```
+
+
+```{r}
+```
+
+### Scatter plot
+
+```{r}
+ggplot(data = iris, aes(x=Sepal.Length, y=Petal.Length))+geom_point()
+ggplot(data = iris, aes(x=Sepal.Length, y=Petal.Length, col=Species))+geom_point()
+```
+
+### Box plot
+
+```{r}
+ggplot(data = iris, aes(x = Species, y=Sepal.Length, fill = Species)) + geom_boxplot() 
+```
+
+### Histogram
+
+```{r}
+ggplot(data = iris, aes(x=Sepal.Length)) + labs(x="Sepal", y="Frequency of sepal length") + 
+  geom_histogram(bins = 10, fill = 'red', col = 'black') +
+  ggtitle('Histogram')
+```
+
+### Density plot
+
+```{r}
+ggplot(data  =iris, aes(x = Sepal.Length, fill = Species)) + labs(x = "sepal Length", y = "frequency of sepal length")+
+         geom_density(col = "red", alpha = 0.6) + 
+         ggtitle("Density plot")
+```
+
